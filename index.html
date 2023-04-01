@@ -36,7 +36,7 @@
             <div class="card-body p-4">
               <div class="row">
                 <div class="col">
-                  <p class="emoji">🌦</p>
+                  <p class="emoji" id="weather-icon">🌦</p>
                   <div class="d-flex align-items-start justify-content-center">
                     <p id="temperature" class="temperature mb-0">19</p>
                     <div class="btn-group btn-group-toggle d-flex">
@@ -58,12 +58,13 @@
                       </button>
                     </div>
                   </div>
-                  <span class="weather-data">
-                    <p class="humidity d-inline mb-4">
+                  <div class="weather-data">
+                    <p class="mb-2" id="weather-description">Partly Cloudy</p>
+                    <p class="mb-4">
                       Humidity: <span id="humidity"> 75</span>% ⸺ Wind:
                       <span id="humidity">4</span>km/h
                     </p>
-                  </span>
+                  </div>
                   <div class="location mb-2 mt-4">
                     <p id="city-name" class="location d-inline">Brighton, UK</p>
                   </div>
@@ -73,8 +74,8 @@
                       Monday, 6 March 2023
                     </p>
                   </div>
-                  <hr />
-                  <div class="pt-4 mt-4 row d-flex">
+                  <!-- <hr />
+                  <div class="pt-4 mt-4 row d-flex forecast">
                     <div class="offset-1 col-2 align-items-center">
                       <p class="weekday-list mb-0">Mon</p>
                       <p class="day-list">6 Mar</p>
@@ -109,7 +110,7 @@
                       <p class="emoji-list">🌧</p>
                       <p class="temperature-list mb-0">13°C</p>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
