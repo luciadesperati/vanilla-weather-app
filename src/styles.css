@@ -52,6 +52,8 @@ hr {
   color: black;
 }
 
+.humidity,
+.wind,
 .date {
   font-size: small;
   font-family: Helvetica, sans-serif;
