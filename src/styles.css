@@ -6,8 +6,15 @@ button:hover {
   font-weight: bold;
 }
 
-ul {
-  list-style: none;
+input:focus {
+  box-shadow: none !important;
+  border-color: black !important;
+}
+
+hr {
+  margin-top: 60px !important;
+  margin-bottom: 40px !important;
+  color: #888888 !important;
 }
 
 .search {
@@ -33,12 +40,18 @@ ul {
 }
 
 .temperature {
-  font-size: 70px;
+  font-size: 60px;
   font-family: Helvetica, sans-serif;
   margin-top: -20px;
 }
 
-.location,
+.location {
+  font-size: x-large;
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  color: black;
+}
+
 .date {
   font-size: small;
   font-family: Helvetica, sans-serif;
@@ -58,21 +71,39 @@ ul {
 }
 
 .weekday-list {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
 }
 
 .day-list {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 300;
   color: #888888;
+  margin-bottom: 0;
 }
 
 .temperature-list {
-  font-size: 25px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .emoji-list {
-  font-size: 30px;
+  font-size: 35px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.button-temp {
+  border: none;
+  background: transparent;
+}
+
+.btn-check:focus,
+.btn:focus {
+  font-weight: 900;
+  box-shadow: none !important;
+}
+
+.footer {
+  font-size: small;
 }

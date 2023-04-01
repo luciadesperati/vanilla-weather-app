@@ -17,157 +17,114 @@
     <div class="container p-5">
       <div class="row">
         <div class="col-4-lg col-4-md offset-3-lg offset-3-md">
-          <div class="card shadow-lg border-0">
-            <div class="card-header border-0 bg-white pt-4 px-4">
-              <!-- <div class="search">
-                <div
-                  class="border-0 solid rounded-circle w-100 h-100 d-flex align-items-center justify-content-center"
-                >
-                  <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                </div>
-              </div> -->
-              <div class="d-flex">
-                <form id="form" class="d-flex w-100">
-                  <input
-                    id="city-input"
-                    class="form-control"
-                    type="search"
-                    placeholder="Type a city..."
-                  />
-                  <button class="btn btn-dark mx-2" type="submit">
-                    Submit
-                  </button>
-                </form>
-                <button class="btn btn-outline border" id="current-position">
-                  Current
-                </button>
-              </div>
+          <!-- Card Search -->
+          <div class="card shadow-lg border-0 my-4 py-4 px-2">
+            <div class="card-body border-0">
+              <form id="form" class="d-flex w-100">
+                <input
+                  id="city-input"
+                  class="form-control"
+                  type="search"
+                  placeholder="Type a city..."
+                />
+                <button class="btn btn-dark mx-2" type="submit">Submit</button>
+              </form>
             </div>
-            <div class="card-body px-4 py-5">
+          </div>
+          <!-- Card Weather & Forecast -->
+          <div class="card shadow-lg border-0 py-4 px-2 text-center">
+            <div class="card-body p-4">
               <div class="row">
                 <div class="col">
-                  <p class="emoji m-0">🌦</p>
-                  <p id="temperature" class="temperature mb-0">19</p>
-                  <div>
-                    <a id="temp-cel" href="#">°C</a> |
-                    <a id="temp-far" href="#">°F</a>
+                  <p class="emoji">🌦</p>
+                  <div class="d-flex align-items-start justify-content-center">
+                    <p id="temperature" class="temperature mb-0">19</p>
+                    <div class="btn-group btn-group-toggle d-flex">
+                      <button
+                        class="btn button-temp my-0 mx-1 p-1"
+                        autofocus="autofocus"
+                        id="temp-cel"
+                        href="#"
+                      >
+                        °C
+                      </button>
+                      <h4 class="m-0 p-0">|</h4>
+                      <button
+                        class="btn button-temp my-0 mx-1 p-1"
+                        id="temp-far"
+                        href="#"
+                      >
+                        °F
+                      </button>
+                    </div>
                   </div>
-                  <hr class="my-4" />
                   <div class="location mb-2">
-                    <i class="fa-solid fa-location-dot location-icon"></i>
                     <p id="city-name" class="location d-inline">Brighton, UK</p>
                   </div>
-                  <div class="date">
+                  <div class="date mb-4">
                     <i class="fa-regular fa-calendar date-icon"></i>
-                    <p id="date-display" class="date d-inline">6 March, 2023</p>
+                    <p id="date-display" class="date d-inline mb-4">
+                      6 March, 2023
+                    </p>
+                  </div>
+                  <hr />
+                  <div class="pt-4 mt-4 row d-flex">
+                    <div class="offset-1 col-2 align-items-center">
+                      <p class="weekday-list mb-0">Mon</p>
+                      <p class="day-list">6 Mar</p>
+                      <p class="emoji-list">☀️</p>
+                      <p class="temperature-list">23°C</p>
+                    </div>
+
+                    <div class="col-2 align-items-center">
+                      <p class="weekday-list mb-0">Tue</p>
+                      <p class="day-list">7 Mar</p>
+                      <p class="emoji-list">🌤</p>
+                      <p class="temperature-list">19°C</p>
+                    </div>
+
+                    <div class="col-2 align-items-center">
+                      <p class="weekday-list mb-0">Wed</p>
+                      <p class="day-list">8 Mar</p>
+                      <p class="emoji-list">⛅️</p>
+                      <p class="temperature-list">18°C</p>
+                    </div>
+
+                    <div class="col-2 align-items-center">
+                      <p class="weekday-list mb-0">Thu</p>
+                      <p class="day-list">9 Mar</p>
+                      <p class="emoji-list">☀️</p>
+                      <p class="temperature-list">20°C</p>
+                    </div>
+
+                    <div class="col-2 align-items-center">
+                      <p class="weekday-list mb-0">Fri</p>
+                      <p class="day-list">10 Mar</p>
+                      <p class="emoji-list">🌧</p>
+                      <p class="temperature-list mb-0">13°C</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="card-footer d-grid bg-black">
-              <button class="m-0 p-2 btn text-white">
-                Check the 5-day forecast
-              </button>
             </div>
           </div>
         </div>
       </div>
-      <div class="row mt-5">
-        <div class="col-4-lg col-8-md offset-3-lg offset-2-md">
-          <div class="card shadow-lg border-0">
-            <div class="card-body p-4">
-              <ul class="bullet-none m-0 p-0">
-                <li class="mb-2">
-                  <div class="row d-flex align-items-center">
-                    <div class="col-6">
-                      <p class="weekday-list mb-0">Monday</p>
-                      <p class="day-list">6 Mar</p>
-                    </div>
-                    <div class="col-4">
-                      <p class="temperature-list">23°C</p>
-                    </div>
-                    <div class="col-2">
-                      <p class="emoji-list">☀️</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="mb-3">
-                  <div class="row d-flex align-items-center">
-                    <div class="col-6">
-                      <p class="weekday-list mb-0">Tuesday</p>
-                      <p class="day-list">7 Mar</p>
-                    </div>
-                    <div class="col-4">
-                      <p class="temperature-list">19°C</p>
-                    </div>
-                    <div class="col-2">
-                      <p class="emoji-list">🌤</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="mb-3">
-                  <div class="row d-flex align-items-center">
-                    <div class="col-6">
-                      <p class="weekday-list mb-0">Wednesday</p>
-                      <p class="day-list">8 Mar</p>
-                    </div>
-                    <div class="col-4">
-                      <p class="temperature-list">18°C</p>
-                    </div>
-                    <div class="col-2">
-                      <p class="emoji-list">⛅️</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="mb-3">
-                  <div class="row d-flex align-items-center">
-                    <div class="col-6">
-                      <p class="weekday-list mb-0">Thursday</p>
-                      <p class="day-list">9 Mar</p>
-                    </div>
-                    <div class="col-4">
-                      <p class="temperature-list">20°C</p>
-                    </div>
-                    <div class="col-2">
-                      <p class="emoji-list">☀️</p>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="row d-flex align-items-center">
-                    <div class="col-6">
-                      <p class="weekday-list mb-0">Friday</p>
-                      <p class="day-list mb-0">10 Mar</p>
-                    </div>
-                    <div class="col-4">
-                      <p class="temperature-list mb-0">13°C</p>
-                    </div>
-                    <div class="col-2">
-                      <p class="emoji-list mb-0">🌧</p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            x
-          </div>
-          <div class="mt-4">
-            <p>
-              This project was coded by
-              <a href="https://luciadesperati.com" target="_blank"
-                >Lucia Desperati
-              </a>
-              and is open-sourced on
-              <a
-                href="https://github.com/luciadesperati/weather-app"
-                target="_blank"
-                >GitHub</a
-              >
-              and hosted on
-              <a href="https://netlify.com" target="_blank">Netlify</a>
-            </p>
-          </div>
-        </div>
+      <div class="mt-4 text-center text-secondary">
+        <span class="footer">
+          This project was coded by
+          <a href="https://luciadesperati.com" target="_blank"
+            >Lucia Desperati
+          </a>
+          and is open-sourced on
+          <a
+            href="https://github.com/luciadesperati/weather-app"
+            target="_blank"
+            >GitHub</a
+          >
+          and hosted on
+          <a href="https://netlify.com" target="_blank">Netlify</a>
+        </span>
       </div>
     </div>
 
