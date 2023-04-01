@@ -36,7 +36,11 @@
             <div class="card-body p-4">
               <div class="row">
                 <div class="col">
-                  <p class="emoji" id="weather-icon">🌦</p>
+                  <img
+                    class="emoji"
+                    id="weather-icon"
+                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+                  />
                   <div class="d-flex align-items-start justify-content-center">
                     <p id="temperature" class="temperature mb-0">19</p>
                     <div class="btn-group btn-group-toggle d-flex">
@@ -59,14 +63,19 @@
                     </div>
                   </div>
                   <div class="weather-data">
-                    <p class="mb-2" id="weather-description">Partly Cloudy</p>
+                    <p
+                      class="mb-2 weather-description"
+                      id="weather-description"
+                    >
+                      Clear Sky
+                    </p>
                     <p class="mb-4">
                       Humidity: <span id="humidity"> 75</span>% ⸺ Wind:
-                      <span id="humidity">4</span>km/h
+                      <span id="wind">4</span> km/h
                     </p>
                   </div>
                   <div class="location mb-2 mt-4">
-                    <p id="city-name" class="location d-inline">Brighton, UK</p>
+                    <p id="city-name" class="location d-inline">Brighton</p>
                   </div>
                   <div class="date mb-2">
                     <i class="fa-regular fa-calendar date-icon"></i>

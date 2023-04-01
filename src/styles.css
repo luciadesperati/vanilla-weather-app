@@ -108,3 +108,7 @@ hr {
 .footer {
   font-size: small;
 }
+
+.weather-description {
+  text-transform: capitalize;
+}

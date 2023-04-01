@@ -1,91 +1,84 @@
-// let input = document.querySelector("#city-input");
-// let form = document.querySelector("#form");
-// let temp = document.querySelector("#temperature");
-// let cel = document.querySelector("#temp-cel");
-// let far = document.querySelector("#temp-far");
-// let city = document.querySelector("#city-name");
-// let dateDisplay = document.querySelector("#date-display");
+let input = document.querySelector("#city-input");
+let form = document.querySelector("#form");
+let temp = document.querySelector("#temperature");
+let cel = document.querySelector("#temp-cel");
+let far = document.querySelector("#temp-far");
+let city = document.querySelector("#city-name");
+let dateDisplay = document.querySelector("#date-display");
+let weatherIcon = document.querySelector("#weather-icon");
+let humidity = document.querySelector("#humidity");
+let wind = document.querySelector("#wind");
+let currentTempCel = null;
 
-// // on click and on enter, update city name
-// function changeCity(event) {
-//   event.preventDefault();
-//   city.innerHTML = `${input.value}`;
-// }
+// on click and on enter, update city name
+function changeCity(event) {
+  event.preventDefault();
+  city.innerHTML = `${input.value}`;
+}
 
-// form.addEventListener("submit", changeCity);
+form.addEventListener("submit", changeCity);
 
 // // change temp when clicking on C or F
-// function changeTempFar() {
-//   temp.innerHTML = "66";
-// }
+function changeTempFar() {
+  temp.innerHTML = Math.round((currentTempCel * 9) / 5 + 32);
+}
 
-// far.addEventListener("click", changeTempFar);
+far.addEventListener("click", changeTempFar);
 
-// function changeTempCel() {
-//   temp.innerHTML = "19";
-// }
-// cel.addEventListener("click", changeTempCel);
+function changeTempCel() {
+  temp.innerHTML = `${currentTempCel}`;
+}
+cel.addEventListener("click", changeTempCel);
 
-// // set today's date
-// let now = new Date();
-// let days = [
-//   "Sunday",
-//   "Monday",
-//   "Tuesday",
-//   "Wednesday",
-//   "Thurday",
-//   "Friday",
-//   "Saturday",
-// ];
-// let day = days[now.getDay()];
-// let hour = now.getHours();
-// let minutes = now.getMinutes().toString().padStart(2, "0");
-// dateDisplay.innerHTML = `${day} ${hour}:${minutes}`;
+// set today's date
+let now = new Date();
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thurday",
+  "Friday",
+  "Saturday",
+];
+let day = days[now.getDay()];
+let hour = now.getHours();
+let minutes = now.getMinutes().toString().padStart(2, "0");
+dateDisplay.innerHTML = `${day} ${hour}:${minutes}`;
+let weatherDescription = document.querySelector("#weather-description");
 
-// // when search > show temp of searched city
-// function onSearchCity(event) {
-//   event.preventDefault();
+// when search > show temp of searched city
+function onSearchCity(event) {
+  event.preventDefault();
 
-//   let searchedCity = `${input.value}`;
-//   let apiKey = "c03face7caa58a9b7ffa9f52b7238a93";
-//   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&appid=${apiKey}&units=metric`;
-//   console.log(apiUrl);
+  let searchedCity = `${input.value}`;
+  let apiKey = "2b6be0a88f02eco343b0c579f343cbt9";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${searchedCity}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
 
-//   function showTemp(data) {
-//     let currentTemp = `${Math.round(data.data.main.temp)}°C`;
-//     console.log(currentTemp);
+  function showWeather(data) {
+    console.log(data);
+    let currentTemp = `${Math.round(data.data.daily[0].temperature.day)}`;
+    console.log(currentTemp);
+    temp.innerHTML = `${currentTemp}`;
 
-//     temp.innerHTML = `${currentTemp}`;
-//   }
+    let currentWeatherDescription = data.data.daily[0].condition.description;
+    weatherDescription.innerHTML = `${currentWeatherDescription}`;
 
-//   axios.get(apiUrl).then(showTemp);
-// }
+    let currentWeatherIcon = data.data.daily[0].condition.icon_url;
+    weatherIcon.src = `${currentWeatherIcon}`;
+    console.log(currentWeatherIcon);
 
-// form.addEventListener("submit", onSearchCity);
+    let currentHumidity = data.data.daily[0].temperature.humidity;
+    humidity.innerHTML = `${currentHumidity}`;
 
-// function currentCity() {
-//   //function replace data
-//   function replaceData(data) {
-//     //replace city based on position from API
-//     let currentCityName = data.data.name;
-//     city.innerHTML = `${currentCityName}`;
+    let currentWind = `${Math.round(data.data.daily[0].wind.speed)}`;
+    wind.innerHTML = `${currentWind}`;
 
-//     //replace temp based on position from API
-//     let currentCityTemp = Math.round(data.data.main.temp);
-//     temp.innerHTML = `${currentCityTemp}`;
-//   }
+    currentTempCel = currentTemp;
+  }
 
-//   // find current position > API lat/lon
-//   function handlePosition(position) {
-//     let apiKey = "c03face7caa58a9b7ffa9f52b7238a93";
-//     let lat = position.coords.latitude;
-//     let lon = position.coords.longitude;
-//     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-//     axios.get(apiUrl).then(replaceData);
-//   }
+  axios.get(apiUrl).then(showWeather);
+}
 
-//   navigator.geolocation.getCurrentPosition(handlePosition);
-// }
-
-// let currentButton = document.querySelector("#current-position");
-// currentButton.addEventListener("click", currentCity);
+form.addEventListener("submit", onSearchCity);
