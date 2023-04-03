@@ -96,7 +96,9 @@ hr {
 }
 
 .emoji-list {
-  font-size: 35px;
+  justify-content: center;
+  align-content: center;
+  width: 45px;
   margin-top: 0px;
   margin-bottom: 5px;
 }
