@@ -121,3 +121,7 @@ hr {
 .weather-description {
   text-transform: capitalize;
 }
+
+/* .forecast {
+  justify-content: center;
+} */
