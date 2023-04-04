@@ -18,17 +18,17 @@ function changeCity(event) {
 
 form.addEventListener("submit", changeCity);
 
-// // change temp when clicking on C or F
+// change temp when clicking on C or F
 function changeTempFar() {
   temp.innerHTML = Math.round((currentTempCel * 9) / 5 + 32);
 }
 
-far.addEventListener("click", changeTempFar);
+// far.addEventListener("click", changeTempFar);
 
 function changeTempCel() {
   temp.innerHTML = `${currentTempCel}`;
 }
-cel.addEventListener("click", changeTempCel);
+// cel.addEventListener("click", changeTempCel);
 
 // set today's date
 let now = new Date();
