@@ -50,6 +50,7 @@ hr {
   font-family: Helvetica, sans-serif;
   font-weight: 400;
   color: black;
+  text-transform: capitalize;
 }
 
 .weather-data,
@@ -86,13 +87,13 @@ hr {
 .temperature-max {
   font-size: 12px;
   font-weight: bold;
+  margin-left: 5px;
 }
 
 .temperature-min {
   font-size: 12px;
   font-weight: normal;
   color: #888888;
-  margin-left: 4px;
 }
 
 .emoji-list {
